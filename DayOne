@@ -1,0 +1,47 @@
+package org.ink;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class DayOne {
+	
+	public static void main(String[] args) throws InterruptedException {
+		
+		
+//		Initiate the WebDriver
+//		WebDriver refname = new DriverClassName();
+		
+		WebDriver driver = new ChromeDriver();
+		
+//		get(), getTitle(), getCurrentUrl(), maximize(), quit(), SwitchTo():
+		
+		driver.get("https://www.facebook.com");
+		
+		Thread.sleep(3000);
+		// Maximize the window 
+		
+		driver.manage().window().maximize();
+		
+//		Get the locators from the webpage ( Ctrl +2 -> give L ) for return type 
+		
+		WebElement username = driver.findElement(By.id("email"));
+		
+		username.sendKeys("limitlesscoder");
+		
+		Thread.sleep(3000);
+		
+		WebElement password = driver.findElement(By.id("pass"));
+		
+		password.sendKeys("Limitlesscoder@123");
+		
+		Thread.sleep(3000);
+		
+		WebElement loginBtn = driver.findElement(By.name("login"));
+		
+		loginBtn.click();
+		
+	}
+	
+}
